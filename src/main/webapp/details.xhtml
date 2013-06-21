@@ -6,28 +6,22 @@
 	template="/templates/default.xhtml">
 
 	<ui:define name="content">
-		<h:form>
-			<h:dataTable value="#{personBean.ownedCars}" var="item">
-				<f:facet name="header">Rented cars</f:facet>
-				<h:column>
-					<f:facet name="header">Make</f:facet>
-					<h:outputText value="#{item.make}" />
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">Model</f:facet>
-					<h:outputText value="#{item.model}" />
-				</h:column>
-
-				<h:column>
-					<f:facet name="header">#{msg.action}</f:facet>
-					<h:commandLink value="#{msg.actionDelete}"
-						action="#{personBean.disposeCar}" />
-				</h:column>
-
-			</h:dataTable>
-		</h:form>
-
+		<p class="title">#{msg.personSellCar} - #{item.make}</p>
+		<div class="box">
+			<h:form>
+				<h:dataTable value="#{personBean.ownedCars}" var="item">
+					<h:column>
+						<f:facet name="header">#{msg.personSellCarModel}</f:facet>
+						<h:outputText value="#{item.make} " />
+						<h:outputText value="#{item.model}" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">#{msg.action}</f:facet>
+						<h:commandLink value="#{msg.actionDelete}" action="#{personBean.disposeCar}" />
+					</h:column>
+	
+				</h:dataTable>
+			</h:form>
+		</div>
 	</ui:define>
-
 </ui:composition>

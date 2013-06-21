@@ -3,29 +3,23 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html">
-  <div>
 	<h:form>
-	  <ul>
-		<li>
-		  <h:commandLink action="home?faces-redirect=true">
-			<h:outputText value="#{msg.linkHome}" />
-		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="add?faces-redirect=true">
-			<h:outputText value="#{msg.personAddLabel}" />
-		  </h:commandLink></li>
-		<li>
-		  <h:commandLink action="showPersons?faces-redirect=true">
-			 <h:outputText value="#{msg.personAllLabel}" />
-		  </h:commandLink>
-		</li>
-		<li>
-		  <h:commandLink action="sell">
-			 <h:outputText value=" Sell car" />
-		  </h:commandLink>
-		</li>
-	</ul>
-   </h:form>
-  </div>
+		<div class="category">
+			<ui:insert name="category">
+				#{msg.mainCategory}
+			</ui:insert>
+		</div>
+		<ul>
+			<li>
+				<h:commandLink action="add?faces-redirect=true">
+					<h:outputText value="#{msg.personAddLabel}" />
+				</h:commandLink>
+			</li>
+			<li>
+				<h:commandLink action="sell?faces-redirect=true">
+					<h:outputText value=" Sell car" />
+				</h:commandLink>
+			</li>
+		</ul>
+	</h:form>
 </ui:composition>
