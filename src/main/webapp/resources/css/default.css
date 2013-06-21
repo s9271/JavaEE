@@ -191,18 +191,18 @@ body {
 	text-align: center;
 }
 
-.add .lefttable{
+.add .lefttable, .sell .lefttable{
 	float: left;
 	width: 200px;
 	clear: both;
 	text-align: right;
 }
 
-.add input[type="text"]{
+.add input[type="text"], .sell select{
 	float: left;
 	text-align: left;
 }
 
-.add .message{
+.add .message, .sell .message{
 	text-align: left;
 }
